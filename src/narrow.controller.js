@@ -8,7 +8,6 @@ NarrowItDownController.$inject = ['MenuSearchService']
 function NarrowItDownController(MenuSearchService) {
   var narrow = this;
   narrow.searchItem = "";
-  narrow.found = [];
 
   narrow.narrowItDown = function() {
     console.log("narrow.searchItem: ", narrow.searchItem);
@@ -16,6 +15,7 @@ function NarrowItDownController(MenuSearchService) {
     promise.then(function (response) {
       console.log(response.data);
       var list = response.data.menu_items;
+      narrow.found = [];
       if (narrow.searchItem !== '') {
         for(var i = 0; i < list.length; i++) {
           if (list[i].description.toLowerCase().indexOf(narrow.searchItem) !== -1) {
