@@ -15,11 +15,11 @@ function NarrowItDownController(MenuSearchService) {
     var promise = MenuSearchService.getMatchedMenuItems(narrow.searchItem);
     promise.then(function (response) {
       console.log(response.data);
-      // narrow.found = response.data.menu_items;
       var list = response.data.menu_items;
       if (narrow.searchItem !== '') {
         for(var i = 0; i < list.length; i++) {
           if (list[i].description.toLowerCase().indexOf(narrow.searchItem) !== -1) {
+            console.log("adding count # ", i);
             narrow.found.push(list[i]);
           }
         }
