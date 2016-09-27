@@ -2,7 +2,9 @@
 <div ng-if="found.items.length > 0">
   <ul>
     <li ng-repeat="item in found.items">
-      {{ item.name }}
+      {{ item.name }} ({{ item.short_name }}) :
+      {{ item.price_small | currency }} ({{item.small_portion_name}}) /
+      {{ item.price_large | currency }} ({{item.large_portion_name}}) &nbsp;&nbsp;&nbsp;
       <button ng-click="found.onRemove({index: $index});">Don't want this one!</button>
     </li>
   </ul>

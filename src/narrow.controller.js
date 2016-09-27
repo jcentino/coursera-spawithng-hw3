@@ -18,7 +18,7 @@ function NarrowItDownController(MenuSearchService) {
       narrow.found = [];
       if (narrow.searchItem !== '') {
         for(var i = 0; i < list.length; i++) {
-          if (list[i].description.toLowerCase().indexOf(narrow.searchItem) !== -1) {
+          if (list[i].description.toLowerCase().indexOf(narrow.searchItem.toLowerCase()) !== -1) {
             console.log("adding count # ", i);
             narrow.found.push(list[i]);
           }
