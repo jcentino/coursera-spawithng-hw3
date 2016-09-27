@@ -25,7 +25,7 @@ function NarrowItDownController(MenuSearchService) {
         }
       }
       else {
-        narrow.found = response.data.menu_items;
+        narrow.found = [];
       }
     })
     .catch(function (error) {
